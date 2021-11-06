@@ -22,7 +22,22 @@ function logInputs(){
     console.log(city1Input)
     console.log(city2Input)
     console.log(' ')
+    postData('Хуй');
+    console.log(' ')
+
 }
+
+
+function postData(input) {
+    let bruh = $.ajax({
+        type: 'POST',
+        url: 'testing_responce.py',
+        data: { param: input },
+        
+    });
+    return bruh.responseText;
+}
+
 
 
 

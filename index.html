@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Better Package</title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+<div class = "base-block">
+
+    <h1 align = right id = "title">Better Package</h1>
+    <h1 align = middle id = "tagline">Поиск лучшего сервиса доставки</h1>
+
+    <div class = "map">
+        <div id = "from">
+            <input placeholder="Город отправления" type="text" maxlength="512" id="city1" class="searchField"/>
+        </div>
+        <div id = "to">
+            <input placeholder="Город получения" type="text" maxlength="512" id="city2" class="searchField"/>
+        </div>
+        <img src = "Image/arr.svg" alt = "--->" width = "20%" height = "40%" class = "arr">
+    </div>
+    <div class = "dim">
+        <div class = "par">
+            <button class="parbtn">Габариты:</button>
+            <div id="myPar" class="par-content">
+                <label>
+                    <input placeholder="Длина, см" type="number" maxlength="512" id="lenght" class="searchField"/>
+                    <input placeholder="Ширина, см" type="number" maxlength="512" id="width" class="searchField"/>
+                    <input placeholder="Высота, см" type="number" maxlength="512" id="high" class="searchField"/>
+                    <input placeholder="Вес, см" type="number" maxlength="512" id="weight" class="searchField"/>
+                </label>
+            </div>
+        </div>
+        <div class = "cost">
+            <label><input placeholder = "Стоимость:" type = number></label>
+        </div>
+        <div class="cur">
+            <button onclick="myFunction()" class="curbtn">Валюта:</button>
+            <div id="myCur" class="cur-content">
+                <button>RUB</button>
+                <button>EUR</button>
+                <button>USD</button>
+            </div>
+            <script>
+                function myFunction() {
+                    document.getElementById("myCur").classList.toggle("show");
+                }
+                window.onclick = function(event) {
+                    if (!event.target.matches('.curbtn')) {
+
+                        var curs = document.getElementsByClassName("cur-content");
+                        var i;
+                        for (i = 0; i < currs.length; i++) {
+                            var openCur = curs[i];
+                            if (openCur.classList.contains('show')) {
+                                openCur.classList.remove('show');
+                            }
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <div class = "class">
+            <button class="classbtn">Классы:</button>
+            <div id="myClass" class="class-content">
+                <a href="#">Хрупкий</a>
+                <a href="#">Горючий</a>
+                <a href="#">Живой</a>
+                <a href="#">Опасный</a>
+            </div>
+        </div>
+    </div>
+    <div class = "comp">
+        <button type="submit" id="submit" onclick="logInputs();">Сравнить цены</button>
+        <div id = "sort">
+            <h2>Сортировать по:</h2>
+                <button id = "b1">Цене</button>
+                <button id = "b2">Названию</button>
+                <button id = "b3">Срокам</button>
+        </div>
+        <div class = "cont1">
+
+            <img src = "Image/sdek.jpg" class = "img">
+            <button class = "tr" type ="submit"><img src = "Image/triangle.png" width = "100%" height="100%"></button>
+                <h2 class = "name">Название</h2>
+                <h2 class = "price">Цена</h2>
+                <h2 class = "timing">Сроки</h2>
+        </div>
+        <div class = "cont2">
+            <img src = "Image/sdek.jpg" class = "img">
+            <button class = "tr" type ="submit"><img src = "Image/triangle.png" width = "100%" height="100%"></button>
+            <h2 class = "name">Название</h2>
+            <h2 class = "price">Цена</h2>
+            <h2 class = "timing">Сроки</h2>
+        </div>
+        <div class = "cont3">
+            <img src = "Image/sdek.jpg" class = "img">
+            <button class = "tr" type ="submit"><img src = "Image/triangle.png" width = "100%" height="100%"></button>
+            <h2 class = "name">Название</h2>
+            <h2 class = "price">Цена</h2>
+            <h2 class = "timing">Сроки</h2>
+        </div>
+    </div>
+    <div class = "aboutUs">
+        <h1>О нас</h1>
+        <br>
+        <p>Если вы перешли на эту страницу, значит вы заинтересованы нашим проектом.
+            Мы – группа начинающих подростков-разработчиков из Ростова-на-Дону.
+
+            Контактный номер:  +79*********
+            Контактная почта:  ********@*****.***
+            Отправить денежку на еду можно сюда:
+            **** **** **** ****</p>
+    </div>
+</div>
+<script  src="script.js"></script>
+</body>
+</html>

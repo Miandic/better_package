@@ -64,7 +64,7 @@ class Company:
         self.money = 0
         self.time = 0
         self.name = ""
-        self.returned_data = [[]]
+        self.returned_data = []
 
     def to_xpath(self, name):
         xpath = xpath_soup(name)
@@ -140,7 +140,7 @@ class ParsDel(Company):
     def read_data(self):
         time.sleep(5)
         self.soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-        self.returned_data[0].append(self.name)
+        self.returned_data.append(self.name)
         dateAll = self.soup.findAll("span", {"class": "date"})
         a = dateAll[0].text
         a = str(a).strip()
@@ -155,8 +155,8 @@ class ParsDel(Company):
 
         cost = self.soup.find("span", {"class": "bill-total"})
 
-        self.returned_data[0].append(cost.text)
-        self.returned_data[0].append(cnt_time(a, b))
+        self.returned_data.append(cost.text)
+        self.returned_data.append(cnt_time(a, b))
 
     def return_info(self):
         print(self.returned_data)
@@ -165,7 +165,7 @@ class ParsDel(Company):
 class ParseCDEK(Company):
     def __init__(self, start_point, end_point, currency, length, weight, height, width, money):
         Company.__init__(self, start_point, end_point, currency, length, weight, height, width, money)
-        self.name = "DelLine"
+        self.name = "CDEK"
 
         self.driver = webdriver.Chrome(executable_path=r'C:\Users\Никита\Downloads\chromedriver.exe')
         self.url = 'https://www.cdek.ru/ru/calculate'
@@ -196,32 +196,67 @@ class ParseCDEK(Company):
         selenium_path_element = self.to_xpath(path_soup)
         ActionChains(self.driver).move_to_element(selenium_path_element).click().perform()
         time.sleep(2)
+
         self.soup = BeautifulSoup(self.driver.page_source, 'html.parser')
 
         path_soup = self.soup.findAll("button", {"class": "choice-tabs__action"})
         selenium_path_element = self.to_xpath(path_soup[1])
         ActionChains(self.driver).move_to_element(selenium_path_element).click().perform()
+        time.sleep(2)
+
+        self.soup = BeautifulSoup(self.driver.page_source, 'html.parser')
+
+        path_soup = self.soup.findAll("input", {"class": "base-control__field"})
+
+        selenium_path_element = self.to_xpath(path_soup[0])
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().send_keys(self.length).perform()
+
+        selenium_path_element = self.to_xpath(path_soup[1])
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().send_keys(self.width).perform()
+
+        selenium_path_element = self.to_xpath(path_soup[2])
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().send_keys(self.height).perform()
+
+        selenium_path_element = self.to_xpath(path_soup[3])
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().send_keys(self.weight).perform()
+        time.sleep(1)
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().send_keys(Keys.ENTER)
+
+        path_soup = self.soup.find("button", {"class": "base-icon-button"})
+        selenium_path_element = self.to_xpath(path_soup)
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().perform()
+
+        self.soup = BeautifulSoup(self.driver.page_source, 'html.parser')
+
+        path_soup = self.soup.find("button",
+                                   {"class": "base-button--block base-button base-button--primary base-button--round"})
+        selenium_path_element = self.to_xpath(path_soup)
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().perform()
 
     def read_data(self):
-        time.sleep(5)
+        time.sleep(3)
         self.soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-        self.returned_data[0].append(self.name)
-        dateAll = self.soup.findAll("span", {"class": "date"})
-        a = dateAll[0].text
-        a = str(a).strip()
-        b = dateAll[-1].text
-        b = str(b).strip()
-        for i in range(len(a)):
-            if not a[i].isnumeric():
-                a = a[:i] + ' ' + a[i:len(a)]
-        for i in range(len(b)):
-            if not b[i].isnumeric():
-                b = b[:i] + ' ' + b[i:len(b)]
+        self.returned_data.append(self.name)
+        cost = self.soup.find("div",
+                              {"class": "info-order__total-value"})
+        cost_str = cost.text
+        total_cost_ans = ""
+        for i in range(len(cost_str)):
+            if cost_str[i].isnumeric():
+                total_cost_ans += cost_str[i]
 
-        cost = self.soup.find("span", {"class": "bill-total"})
+        date_arrive = self.soup.find("span", {"class": "info-order__days"})
+        date_arrive_str = date_arrive.text
+        total_date_arrive_ans = ""
 
-        self.returned_data[0].append(cost.text)
-        self.returned_data[0].append(cnt_time(a, b))
+        for i in range(len(date_arrive_str)):
+            if date_arrive_str[i].isnumeric():
+                total_date_arrive_ans += date_arrive_str[i]
+            if date_arrive_str[i] == '-':
+                total_date_arrive_ans += date_arrive_str[i]
+
+        self.returned_data.append(total_cost_ans)
+        self.returned_data.append(total_date_arrive_ans)
 
     def return_info(self):
         print(self.returned_data)
@@ -230,9 +265,7 @@ class ParseCDEK(Company):
 # self, start_point, end_point, currency, length , weight, height, width ,  money
 a = ParseCDEK("Москва", "Ростов", "rub", "1", "0.2", "0.3", "0.3", "1500")
 a.write_data()
+a.read_data()
 
-#a.read_data()
-"""
 print(a.returned_data)
 exit(a.returned_data)
-"""

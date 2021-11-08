@@ -85,12 +85,12 @@ class Company:
         return r
 
 
-class ParDel(Company):
+class ParsDel(Company):
     def __init__(self, start_point, end_point, currency, length, weight, height, width, money):
         Company.__init__(self, start_point, end_point, currency, length, weight, height, width, money)
         self.name = "DelLine"
 
-        self.driver = webdriver.Chrome(executable_path=r'C:\Users\misha\Desktop\Nikita\GoogleDriver\chromedriver.exe')
+        self.driver = webdriver.Chrome(executable_path=r'C:\Users\Никита\Downloads\chromedriver.exe')
         self.url = 'https://www.dellin.ru/requests/'
         self.driver.get(self.url)
         self.driver.maximize_window()
@@ -161,9 +161,78 @@ class ParDel(Company):
     def return_info(self):
         print(self.returned_data)
 
+
+class ParseCDEK(Company):
+    def __init__(self, start_point, end_point, currency, length, weight, height, width, money):
+        Company.__init__(self, start_point, end_point, currency, length, weight, height, width, money)
+        self.name = "DelLine"
+
+        self.driver = webdriver.Chrome(executable_path=r'C:\Users\Никита\Downloads\chromedriver.exe')
+        self.url = 'https://www.cdek.ru/ru/calculate'
+        self.driver.get(self.url)
+        self.driver.maximize_window()
+        wait = WebDriverWait(self.driver, 20)
+
+        self.soup = BeautifulSoup(self.driver.page_source, 'html.parser')
+
+    # func for simple_input
+    # simple_input
+    def parse_propetry_simple_input(self, value, find_parametr, find_parametr_property):
+        path_soup = self.soup.find("input", {find_parametr: find_parametr_property})
+        selenium_path_element = self.to_xpath(path_soup)
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().send_keys(value).perform()
+
+    def write_data(self):
+        inputs = self.soup.findAll("input", {"class": "autocomplete-parcel__control"})
+        selenium_path_element = self.to_xpath(inputs[0])
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().send_keys(self.start_point).perform()
+        time.sleep(2)
+
+        selenium_path_element = self.to_xpath(inputs[1])
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().send_keys(self.end_point).perform()
+        time.sleep(2)
+
+        path_soup = self.soup.find("input", {"class": "base-control-old__field"})
+        selenium_path_element = self.to_xpath(path_soup)
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().perform()
+        time.sleep(2)
+        self.soup = BeautifulSoup(self.driver.page_source, 'html.parser')
+
+        path_soup = self.soup.findAll("button", {"class": "choice-tabs__action"})
+        selenium_path_element = self.to_xpath(path_soup[1])
+        ActionChains(self.driver).move_to_element(selenium_path_element).click().perform()
+
+    def read_data(self):
+        time.sleep(5)
+        self.soup = BeautifulSoup(self.driver.page_source, 'html.parser')
+        self.returned_data[0].append(self.name)
+        dateAll = self.soup.findAll("span", {"class": "date"})
+        a = dateAll[0].text
+        a = str(a).strip()
+        b = dateAll[-1].text
+        b = str(b).strip()
+        for i in range(len(a)):
+            if not a[i].isnumeric():
+                a = a[:i] + ' ' + a[i:len(a)]
+        for i in range(len(b)):
+            if not b[i].isnumeric():
+                b = b[:i] + ' ' + b[i:len(b)]
+
+        cost = self.soup.find("span", {"class": "bill-total"})
+
+        self.returned_data[0].append(cost.text)
+        self.returned_data[0].append(cnt_time(a, b))
+
+    def return_info(self):
+        print(self.returned_data)
+
+
 # self, start_point, end_point, currency, length , weight, height, width ,  money
-a = ParDel("Москва", "Ростов", "rub", "1", "0.2", "0.3", "0.3", "1500")
+a = ParseCDEK("Москва", "Ростов", "rub", "1", "0.2", "0.3", "0.3", "1500")
 a.write_data()
-a.read_data()
+
+#a.read_data()
+"""
 print(a.returned_data)
 exit(a.returned_data)
+"""

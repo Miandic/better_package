@@ -1,0 +1,368 @@
+body{
+    max-width: 1800px;
+    background : darkslateblue;
+}
+
+#title
+{
+    margin-right : 50px;
+    padding : 10px;
+}
+
+.base-block
+{
+    width : 75%;
+    height: 2000px;
+    background : #D4DBEB;
+    margin-right : 12.5%;
+    margin-left : 12.5%;
+    margin-top : 80px;
+}
+
+#tag
+{
+    padding : 20px;
+}
+
+.map
+{
+    width: 50%;
+    height: 200px;
+    margin-top : 50px;
+    margin-left : 25%;
+}
+
+#from
+{
+    position : relative;
+    font-size : x-large;
+    width : 40%;
+    height: 70px;
+    top : 20%;
+}
+
+#from input, #to input
+{
+    margin-top: 50px;
+    position: relative;
+    background-color: #f1f1f1;
+    min-width: 100%;
+    overflow: auto;
+    z-index: 1;
+}
+
+#to
+{
+    position : relative;
+    font-size : x-large;
+    width : 40%;
+    height: 70px;
+    bottom : 15%;
+    left : 58.5%;
+}
+
+.arr
+{
+    position : relative;
+    margin-top: 40px;
+    bottom : 120px;
+    left : 40%;
+    flex: content;
+    transform: rotate(-90deg);
+}
+
+.dim
+{
+    width: 70%;
+    height: 250px;
+    margin-top : 50px;
+    margin-left : 15%;
+}
+
+.parbtn {
+    background-color: #3498DB;
+    width : 100%;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.parbtn:hover, .parbtn:focus {
+    background-color: #2980B9;
+    transition: background 0.4s ease;
+}
+
+.par {
+    position: relative;
+    width : 30%;
+    display: inline-block;
+}
+
+.par-content {
+    display: block;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.par-content input {
+    color: black;
+    min-width: 84%;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.classbtn {
+    background-color: #3498DB;
+    width : 100%;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.classbtn:hover, .classbtn:focus {
+    background-color: #2980B9;
+    transition: background 0.4s ease;
+}
+
+.class {
+    position: relative;
+    width : 25%;
+    top: -40%;
+    display: inline-block;
+    margin-left: 75%;
+}
+
+.class-content {
+    display: block;
+    position: relative;
+    background-color: #f1f1f1;
+    min-width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.class-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.curbtn {
+    background-color: #3498DB;
+    color: white;
+    width : 100%;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.curbtn:hover, .curbtn:focus {
+    background-color: #2980B9;
+    transition: background 0.4s ease;
+}
+
+.cur {
+    position: relative;
+    width : 20%;
+    margin-left: 52.5%;
+    top : -20%;
+    display: inline-block;
+}
+
+.cur-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.cur-content button {
+    color: black;
+    min-width: 100%;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+#myCur button:hover
+{
+    background-color: #ddd;
+}
+
+.show
+{
+    display: block;
+}
+
+.cost
+{
+    position : relative;
+    background: white;
+    width : 20.5%;
+    height: 20%;
+    font-size: larger;
+    margin-top: -50px;
+    margin-left : 32%;
+}
+
+.cost input
+{
+    max-width: 100%;
+}
+
+.comp
+{
+    width: 70%;
+    height: 700px;
+    margin-top : 50px;
+    margin-left : 15%;
+}
+
+#submit
+{
+    position : relative;
+    width : 40%;
+    height: 60px;
+    font-size: 150%;
+    left : 30%;
+    margin-bottom: 50px;
+    background: #E7B2B2;
+}
+
+#sort button
+{
+    padding: 5px 15px;
+    color: #fff;
+    font-size: 100%;
+    background: #3498DB;
+}
+
+#sort button:hover
+{
+    background: #2980B9;
+    transition: background 0.4s ease;
+}
+
+#b1
+{
+    position: relative;
+    left : 30%;
+    top : -50px;
+}
+
+#b2
+{
+    position: relative;
+    left : 32.5%;
+    top : -50px;
+}
+
+#b3
+{
+    position: relative;
+    left : 35%;
+    top : -50px;
+}
+
+#sort
+{
+    margin-left: 10%;
+    margin-bottom: -10px;
+}
+
+.cont1
+{
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #ffffff;
+}
+
+.cont2
+{
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #ffffff;
+}
+
+.cont3
+{
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background: #ffffff;
+}
+
+.img
+{
+    position: relative;
+    max-width: 19%;
+    background: #3498DB;
+    left : 1%;
+
+}
+
+.name
+{
+    position: relative;
+    bottom: 100%;
+    left : 25%;
+}
+
+.price
+{
+    position: relative;
+    bottom: 120%;
+    left : 50%;
+}
+
+.timing
+{
+    position: relative;
+    bottom: 170%;
+    left : 70%;
+}
+
+.tr {
+    position: relative;
+    max-width: 10%;
+    max-height: 70%;
+    left : 70%;
+    bottom : 20%;
+    border-width: 0px;
+    background: white;
+}
+
+.aboutUs h1
+{
+    position: relative;
+    left : 20%;
+}
+
+.aboutUs p
+{
+    position: relative;
+    width: 60%;
+    font-size: 150%;
+    left : 20%;
+}

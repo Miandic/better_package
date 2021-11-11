@@ -23,26 +23,19 @@
         <input placeholder = "Стоимость:" name="cost" id="cost" type = number>
         <input type="submit" id="submit" value="Сравнить цены"></input>
     </form>
-        <div id = "sort">
-            <h2>Сортировать по:</h2>
-                <button id = "b1">Цене</button>
-                <button id = "b2">Названию</button>
-                <button id = "b3">Срокам</button>
-        </div>
-        <div class = "cont1">
-
+               <div class = "cont1">
             <img src = "{{ url_for('static', filename='Image/sdek.jpg') }}" class = "img">
             <button class = "tr" type ="submit"><img src = "{{ url_for('static', filename='Image/triangle.png') }}" width = "100%" height="100%"></button>
-                <h2 class = "name">Название</h2>
-                <h2 class = "price">Цена</h2>
-                <h2 class = "timing">Сроки</h2>
+                <h2 class = "name">{{ data[0][0] }}</h2>
+                <h2 class = "price">{{data[0][1]}}</h2>
+                <h2 class = "timing">{{data[0][2]}}</h2>
         </div>
         <div class = "cont2">
             <img src = "{{ url_for('static', filename='Image/sdek.jpg') }}" class = "img">
             <button class = "tr" type ="submit"><img src = "{{ url_for('static', filename='Image/triangle.png') }}" width = "100%" height="100%"></button>
-            <h2 class = "name">Название</h2>
-            <h2 class = "price">Цена</h2>
-            <h2 class = "timing">Сроки</h2>
+                <h2 class = "name">{{ data[1][0] }}</h2>
+                <h2 class = "price">{{data[1][1]}}</h2>
+                <h2 class = "timing">{{data[1][2]}}</h2>
         </div>
         <div class = "cont3">
             <img src = "{{ url_for('static', filename='Image/sdek.jpg') }}" class = "img">
@@ -52,19 +45,7 @@
             <h2 class = "timing">Сроки</h2>
         </div>
     </div>
-    </form>
-    <div class = "aboutUs">
-        <h1>О нас</h1>
-        <br>
-        <p>Если вы перешли на эту страницу, значит вы заинтересованы нашим проектом.</p>
-        <p>Мы – группа начинающих подростков-разработчиков из Ростова-на-Дону.</p>
-        <br>
 
-            Контактный номер:  88005553535
-            Контактная почта:  porno365.lol
-            Отправить денежку на еду можно сюда:
-            111x 222y 333i 4444</p>
-    </div>
 </div>
 <script  src="../static/script.js"></script>
 </body>

@@ -90,7 +90,7 @@ class ParsDel(Company):
         Company.__init__(self, start_point, end_point, currency, length, weight, height, width, money)
         self.name = "DelLine"
 
-        self.driver = webdriver.Chrome(executable_path=r'C:\Users\Никита\Downloads\chromedriver.exe')
+        self.driver = webdriver.Chrome(executable_path=r'chromedriver.exe')
         self.url = 'https://www.dellin.ru/requests/'
         self.driver.get(self.url)
         self.driver.maximize_window()
@@ -167,7 +167,7 @@ class ParseCDEK(Company):
         Company.__init__(self, start_point, end_point, currency, length, weight, height, width, money)
         self.name = "CDEK"
 
-        self.driver = webdriver.Chrome(executable_path=r'C:\Users\Никита\Downloads\chromedriver.exe')
+        self.driver = webdriver.Chrome(executable_path=r'chromedriver.exe')
         self.url = 'https://www.cdek.ru/ru/calculate'
         self.driver.get(self.url)
         self.driver.maximize_window()
@@ -263,7 +263,7 @@ class ParseCDEK(Company):
 
 
 # self, start_point, end_point, currency, length , weight, height, width ,  money
-a = ParseCDEK("Москва", "Ростов", "rub", "1", "0.2", "0.3", "0.3", "1500")
+a = ParseCDEK("Москва", "Ростов", "rub", "1", "2", "3", "3", "1500")
 a.write_data()
 a.read_data()
 

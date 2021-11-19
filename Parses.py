@@ -67,7 +67,7 @@ class Company:
         self.name = ""
         self.returned_data = []
 
-        self.driver = webdriver.Chrome(executable_path=r'C:\Users\Никита\Downloads\chromedriver.exe')
+        self.driver = webdriver.Chrome(executable_path=r'chromedriver.exe')
 
     def to_xpath(self, name):
         xpath = xpath_soup(name)

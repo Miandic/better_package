@@ -6,14 +6,14 @@ from Parser.Companies.ParserDEL import ParserDEL
 from app import send_data
 
 
-def parse():
-    city_from = send_data()[0]
-    city_to = send_data()[1]
-    length = send_data()[2]
-    width = send_data()[3]
-    high = send_data()[4]
-    weight = send_data()[5]
-    cost = send_data()[6]
+def parse(send_data):
+    city_from = send_data[0]
+    city_to = send_data[1]
+    length = send_data[2]
+    width = send_data[3]
+    high = send_data[4]
+    weight = send_data[5]
+    cost = send_data[6]
 
     warnings.filterwarnings("ignore", category=UserWarning, module='bs4')
 

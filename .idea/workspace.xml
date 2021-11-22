@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8319d7cd-d5a6-42c6-9ca4-e6120c0ef888" name="Changes" comment="Data getting =&gt; data sending, one page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parser/Companies/Company.py" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/Companies/Company.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Parser/Companies/chromedriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +96,7 @@
       <workItem from="1637226556072" duration="70000" />
       <workItem from="1637311553835" duration="80000" />
       <workItem from="1637328913808" duration="341000" />
-      <workItem from="1637607118583" duration="4062000" />
+      <workItem from="1637607118583" duration="4492000" />
     </task>
     <task id="LOCAL-00001" summary="Data getting =&gt; data sending, one page">
       <created>1636666025661</created>
@@ -131,6 +129,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Parses_py$parses.coverage" NAME="Parses Coverage Results" MODIFIED="1637329232114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Parses_py$Parses.coverage" NAME="app Coverage Results" MODIFIED="1637611548962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Parses_py$Parses.coverage" NAME="app Coverage Results" MODIFIED="1637611970848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

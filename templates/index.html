@@ -1,24 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Better Package</title>
-    <link rel = "stylesheet" href = "../static/style.css">
+  <meta charset="UTF-8">
+  <title>Better Package</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@700&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <form method="post">
-        <input placeholder="Город отправления" type="text" maxlength="512" name="city1" id="city1" class="searchField">
-        <input placeholder="Город получения" type="text" maxlength="512" name="city2" id="city2" class="searchField">
-        <input placeholder="Длина, см" type="number" maxlength="512" name="length" id="length" class="searchField">
-        <input placeholder="Ширина, см" type="number" maxlength="512" name="width" id="width" class="searchField">
-        <input placeholder="Высота, см" type="number" maxlength="512" name="high" id="high" class="searchField">
-        <input placeholder="Вес, кг" type="number" maxlength="512" name="weight" id="weight" class="searchField">
-        <input placeholder = "Стоимость:" name="cost" id="cost" type = number>
-        <input type="submit" id="submit" value="Сравнить цены">
-    </form>
-    <p>{{data}}</p>
+  <header class="header">
+    <div class="container">
+      <div class="inner">
+        <div class="logo">BETTER PACKAGE</div>
+        <nav class="navigation">
+          <a class="links" href="#">About us</a>
+          <a class="links" href="#">Contacts</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="work_field">
+    <div class="work_container">
+        <form method="post">
+      <div class="place">
+
+          <input type="text" name="city1" id="city1" placeholder="откуда">
+
+        <span class="dash"></span>
+
+          <input type="text" name="city2" id="city2" placeholder="куда">
+
+      </div>
+      <div class="size">
+
+          <input type="number" name="length" id="length" placeholder="x">
+          <input type="number" name="width" id="width" placeholder="y">
+          <input type="number" name="high" id="high" placeholder="z">
+
+      </div>
+      <div class="date">
+
+          <input type="date" name="cost" id="date">
+
+      </div>
+      <div class="cost">
+
+          <input type="number" name="weight" id="cost" placeholder="вес, кг">
+
+      </div>
+      <div class="button">
+        <div class="menu">
+
+            <nav class="d_content" value = "Оссобенности груза">
+              <ul>
+                <li><input type="checkbox" name="common" id="common" checked>Обычный</li>
+                <li><input type="checkbox" name="explosive" id="explosive">Огне/взрывоопасный</li>
+                <li><input type="checkbox" name="liquid" id="liquid">Жидкий</li>
+                <li><input type="checkbox" name="fragile" id="fragile">Хрупкий</li>
+                <li><input type="checkbox" name="alive" id="alive">Живой</li>
+                <li><input type="checkbox" name="no_rotate" id="no_rotate">Чуствительный к переворотам</li>
+              </ul>
+            </nav>
+
+        </div>
+      </div>
+      <div class="commit">
+          <input type="submit" id="submit" value="Начать поиск">
+
+      </div>
+      <div class="bar_container"></div> <!-- 69.17vw - 100%. считать надо исходя из этого-->
+      <div class="list"></div>
+      </div>
+
+    </div>
+  </form>
+  </div>
+  <div class="cube">
+    <img src="{{ url_for('static', filename='image/qube.png') }}" width="80%">
+  </div>
 <script  src="../static/script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>>
 </body>
+
 </html>

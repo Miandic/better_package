@@ -1,8 +1,18 @@
 from flask import Flask, render_template, url_for, request
 import Parser.main
+import json
 print("Setting 'recieved_data' to placeholder stats")
 recived_data = [0, 1, 2, 3, 4, 5, 6]
 print("recived_data now is ", recived_data)
+
+
+q = {
+        "a": 0
+}
+with open("flag.json", "w") as write_file:
+    json.dump(q, write_file)
+
+
 
 app = Flask(__name__)
 

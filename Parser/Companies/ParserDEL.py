@@ -43,11 +43,11 @@ class ParserDEL(Company):
 
     def write_data(self):
         # input lenght, widht,height,weight  value on delLine site
-        self.parse_propetry_simple_input(self.length, "length_view")
+        self.parse_propetry_simple_input(self.length[:-2]+','+self.length[-2:], "length_view")
 
-        self.parse_propetry_simple_input(self.width, "width_view")
+        self.parse_propetry_simple_input(self.width[:-2]+','+self.width[-2:], "width_view")
 
-        self.parse_propetry_simple_input(self.height, "height_view")
+        self.parse_propetry_simple_input(self.height[:-2]+','+self.height[-2:], "height_view")
 
         self.parse_propetry_simple_input(self.weight, "sized_weight")
 

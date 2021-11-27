@@ -1,6 +1,6 @@
 from selenium import webdriver
 from Parser.Functions import xpath_soup
-from webdriver_manager.chrome import ChromeDriverManager
+#from webdriver_manager.chrome import ChromeDriverManager
 
 
 class Company:
@@ -18,7 +18,7 @@ class Company:
         self.name = ""
         self.returned_data = []
 
-        self.driver = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver = webdriver.Chrome(executable_path=r'C:\Users\nov_a\PycharmProjects\aaaaaa\better_package\chromedriver.exe')
 
     def to_xpath(self, name):
         xpath = xpath_soup(name)

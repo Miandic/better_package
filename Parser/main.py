@@ -1,5 +1,6 @@
 import warnings
 import threading
+import json
 from Parser.Companies.ParserCDEK import ParserCDEK
 from Parser.Companies.ParserDHL import ParserDHL
 from Parser.Companies.ParserDEL import ParserDEL
@@ -35,4 +36,16 @@ def parse(send_data):
     write_DEL.join()
 
     post_data = [a.returned_data, b.returned_data, c.returned_data]
+    x = {
+        "a": a.returned_data, "b": b.returned_data, "c": c.returned_data
+    }
+    with open("data.json", "w") as write_file:
+        json.dump(x, write_file)
+
+    j = {
+        "a": 1
+    }
+    with open("flag.json", "w") as write_file:
+        json.dump(j, write_file)
+    #data = json.dumps(x)
     return post_data

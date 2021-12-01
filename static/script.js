@@ -2,6 +2,7 @@ import {$,jQuery} from 'jquery-3.5.1.min.js';
 //хуй
 let list = document.querySelector('.list');
 //хуй
+//хуй
 var flag = jQuery.parseJSON("data.json")
 while (flag["a"] == 0) {
     flag = jQuery.parseJSON("data.json")

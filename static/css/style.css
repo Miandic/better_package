@@ -5,24 +5,31 @@ header{
   height: 7.8125%;
   background: #333333;
   font-family: 'Turret Road', cursive;
-  z-index: 1000;
+  z-index: 999;
 }
 body{
-    height: 200vh;
+  height: 200vh;
 }
 
 h1,h2,h3, h4, h5, h6, p{
   margin: 0;
 }
-
+.container{
+  height: 5.179vh;
+  margin-left: 6.25%; margin-right: 6.25%;
+}
 .inner{
-  margin: 1.86% auto;
+  height: 5.179vh;
+  margin: 1.8vh auto 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.container{
-  margin-left: 6.25%; margin-right: 6.25%;
+.logotype{
+  margin-bottom: 1.367vh;
+  width: 24.3195vw; height: 5.2724375vh;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo{
@@ -30,6 +37,8 @@ h1,h2,h3, h4, h5, h6, p{
   text-transform: uppercase;
   font-size: calc(1rem + 1vw);
   color: #fff;
+  height: 4.39vh;
+  margin-top: 0.8834375vh;
 }
 
 .links{
@@ -206,5 +215,4 @@ input[type=button]{
   background-color: #fff;
   border-radius: 6px;
 }
-
 

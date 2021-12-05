@@ -4,7 +4,7 @@ import json
 print("Setting 'recieved_data' to placeholder stats")
 recived_data = [0, 1, 2, 3, 4, 5, 6]
 print("recived_data now is ", recived_data)
-
+#ХУЙ ХУЙ ХУЙ
 
 q = {
         "a": 0

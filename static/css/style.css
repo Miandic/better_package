@@ -176,10 +176,28 @@ input[type=submit]{
   margin-top: 8vw;
 }
 
+.list_container{
+  margin: 6.73828125vh 0 1.465vh 0;
+}
+.sort{
+  width: 78.31vh; height: 2.831vh;
+}
+button[type=button]{
+  width: 10.36vw; height: 2.44vh;
+
+  margin-right: 3.334vw;
+  background: #ffffff;
+  border-color: #ffffff;
+
+  text-align: left;
+  font-family: 'Turret Road', cursive;
+  font-size: calc(0.7rem + 0.168vw);
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.47);
+}
 .list{
   min-height: 30vh;
   border: 1px solid rgba(0, 178, 202, 0.62);
-  margin: 6.73828125vh 0 1.465vh 0;
 }
 
 .bar_container{

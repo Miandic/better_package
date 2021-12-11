@@ -1,3 +1,11 @@
+body{
+  height: 200vh;
+}
+
+h1,h2,h3, h4, h5, h6, p{
+  margin: 0;
+}
+
 header{
   position: fixed;
   left: 0; top: 0;
@@ -7,17 +15,12 @@ header{
   font-family: 'Turret Road', cursive;
   z-index: 999;
 }
-body{
-  height: 200vh;
-}
 
-h1,h2,h3, h4, h5, h6, p{
-  margin: 0;
-}
 .container{
   height: 5.179vh;
   margin-left: 6.25%; margin-right: 6.25%;
 }
+
 .inner{
   height: 5.179vh;
   margin: 1.8vh auto 0;
@@ -25,6 +28,7 @@ h1,h2,h3, h4, h5, h6, p{
   justify-content: space-between;
   align-items: center;
 }
+
 .logotype{
   margin-bottom: 1.367vh;
   width: 24.3195vw; height: 5.2724375vh;
@@ -86,15 +90,7 @@ h1,h2,h3, h4, h5, h6, p{
   left: 15.41%; top: 10.25%;
   display: block;
 }
-.cube{
-  position: relative;
-  width: 29.62vw;
-  height: 42.203125vh;
-  top: 30.409375vh; left: 52.53vw;
-  margin: 0;
-  box-shadow: #333333;
-  z-index: 1;
-}
+
 .place{
   position: relative;
   width: 31.12vw; height: 4.7vh;
@@ -104,6 +100,7 @@ h1,h2,h3, h4, h5, h6, p{
   align-items: center;
   margin: 3.22vh 1.32vw 3.22vh 0;
 }
+
 input{
   width: 13.63vw; height: 4.78vh;
   border-radius: 2px;
@@ -128,6 +125,7 @@ input:focus{
   border-width: 1px;
   border-color: #00B2CA;
 }
+
 .dash{
   content: "";
   min-width: 1.527vw;
@@ -140,23 +138,9 @@ input:focus{
 .size{
   margin: 3.22vh 1.32vw 3.22vh 0;
 }
+
 .date{
   margin: 3.22vh 1.32vw 3.22vh 0;
-}
-
-.list{
-  min-height: 30vh;
-  border: 1px solid rgba(0, 178, 202, 0.62);
-  margin: 6.73828125vh 0 1.465vh 0;
-}
-.inlist{
-  margin: 1.17vh 0;
-  display: flex;
-  justify-content :space-around;
-}
-.line{
-  height: 9.9609375vh;
-  margin-top: 4vh;
 }
 
 .button{
@@ -188,14 +172,14 @@ ul{
   padding: 0 0.6vw;
 }
 
-.commit{
-  margin-top: 12.125vh;
+input[type=submit]{
+  margin-top: 8vw;
 }
-input[type=button]{
-  background: white;
-  font-family: 'Turret Road', cursive;
-  font-size: calc(1rem + 0.537vw);
-  font-weight: 100;
+
+.list{
+  min-height: 30vh;
+  border: 1px solid rgba(0, 178, 202, 0.62);
+  margin: 6.73828125vh 0 1.465vh 0;
 }
 
 .bar_container{
@@ -214,5 +198,15 @@ input[type=button]{
   height: 100%;
   background-color: #fff;
   border-radius: 6px;
+}
+
+.cube{
+  position: relative;
+  width: 29.62vw;
+  height: 42.203125vh;
+  top: 30.409375vh; left: 52.53vw;
+  margin: 0;
+  box-shadow: #333333;
+  z-index: 1;
 }
 

@@ -25,18 +25,18 @@
     </div>
   </div>
 </header>
-<form method="post">
   <div class="work_field">
     <div class="work_container">
+      <form method="post">
       <div class="place">
-        <input type="text" name="city1" id="city1" placeholder="откуда">
+        <input type="text" name="city1" id="city1" placeholder="Точка отправки">
         <span class="dash"></span>
-        <input type="text" name="city2" id="city2" placeholder="куда">
+        <input type="text" name="city2" id="city2" placeholder="Точка назначения">
       </div>
       <div class="size">
-        <input type="number" name="length" id="length" placeholder="x">
-        <input type="number" name="width" id="width" placeholder="y">
-        <input type="number" name="high" id="high" placeholder="z">
+        <input type="number" name="length" id="length" placeholder="X">
+        <input type="number" name="width" id="width" placeholder="Y">
+        <input type="number" name="high" id="high" placeholder="Z">
       </div>
       <div class="date">
         <input type="date" name="cost" id="date">
@@ -58,20 +58,17 @@
           </nav>
         </div>
       </div>
-      <div class="commit">
-        <input type="submit" id="submit" value="Начать поиск">
-      </div>
-      <div class="bar_container"></div> <!-- 69.17vw - 100%. считать надо исходя из этого-->
+      </form>
+      <input type="submit">
       <div class="list"></div>
     </div>
   </div>
-</form>
 </div>
 <div class="cube">
   <img src="{{ url_for('static', filename='image/qube.png') }}" width="80%">
 </div>
 <script  src="../static/script.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
 </html>

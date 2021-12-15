@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="../static/css/style.css">                <!--подключение css - {{ url_for('static', filename='css/style.css') }}-->
   <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@700&display=swap"
         rel="stylesheet">                                                                         <!--подключение шрифта-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -28,23 +27,23 @@
   <div class="work_field">
     <div class="work_container">
       <form method="post">
-      <div class="place">
+        <div class="place">
         <input type="text" name="city1" id="city1" placeholder="Точка отправки">
         <span class="dash"></span>
         <input type="text" name="city2" id="city2" placeholder="Точка назначения">
       </div>
-      <div class="size">
+        <div class="size">
         <input type="number" name="length" id="length" placeholder="X">
         <input type="number" name="width" id="width" placeholder="Y">
         <input type="number" name="high" id="high" placeholder="Z">
       </div>
-      <div class="date">
+        <div class="date">
         <input type="date" name="cost" id="date">
       </div>
-      <div class="cost">
+        <div class="cost">
         <input type="number" name="weight" id="cost" placeholder="вес, кг">
       </div>
-      <div class="button">
+        <div class="button">
         <div class="menu">
           <nav class="d_content" value = "Оссобенности груза">
             <ul>
@@ -59,7 +58,13 @@
         </div>
       </div>
       </form>
-      <input type="submit">
+      <div class="bar_container">
+        <div id="greyBG">
+          <div id="blueBar"></div>
+        </div>
+        <input type="submit" onclick="move()">
+      </div>
+
       <div class="list_container">
         <div class="sort">
           <button type="button" id="sortBy_speed">По скорости доставки</button>
@@ -72,7 +77,7 @@
   </div>
 </div>
 <div class="cube">
-  <img src="{{ url_for('static', filename='image/qube.png') }}" width="80%">
+  <img src="../static/Image/qube.png" width="80%">
 </div>
 <script  src="../static/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

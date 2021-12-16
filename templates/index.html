@@ -13,7 +13,7 @@
   <div class="container">
     <div class="inner">
       <div class="logotype">
-        <img src="{{ url_for('static', filename='Image/logo.png') }}"> <!--не ебу почему не видит из папки image, надо переделать путь по-другому-->
+        <img src="{{ url_for('static', filename='Image/logo.png') }}" alt="logo">
         <div class="logo">BETTER PACKAGE</div>
       </div>
       <nav class="navigation">
@@ -23,9 +23,10 @@
     </div>
   </div>
 </header>
-  <div class="work_field">
+<form method="post">
+<div class="work_field">
     <div class="work_container">
-      <form method="post">
+
         <div class="place">
         <input type="text" name="city1" id="city1" placeholder="Точка отправки">
         <span class="dash"></span>
@@ -56,7 +57,7 @@
           </nav>
         </div>
       </div>
-      </form>
+
       <div class="bar_container">
         <div id="greyBG">
           <div id="blueBar"></div>
@@ -74,6 +75,7 @@
       </div>
     </div>
   </div>
+</form>
 </div>
 <div class="cube">
   <img src="{{ url_for('static', filename='image/qube.png') }}" width="80%">

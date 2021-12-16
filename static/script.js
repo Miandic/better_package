@@ -1,4 +1,4 @@
-let requestURL = 'data.json';
+let requestURL = '../static/data.json';
 let request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -55,7 +55,7 @@ function ButClick() {
     }
 }
 
-butSearch.onclick = ButClick;
+butSearch.onclick = ButClick();
 
 function changeData(arr){
 

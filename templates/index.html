@@ -1,20 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>Better Package</title>
-  <link rel="stylesheet" href="../static/css/style.css">                <!--подключение css - {{ url_for('static', filename='css/style.css') }}-->
-  <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@700&display=swap"
-        rel="stylesheet">                                                                         <!--подключение шрифта-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@700&display=swap" rel="stylesheet"> <!--подключение шрифта-->
 </head>
 
 <body>
-<header class="header">                                                         <!--шапка страницы-->
+<header class="header"> <!--шапка страницы-->
   <div class="container">
     <div class="inner">
       <div class="logotype">
-        <img src="../static/logo.png">                                      <!--не ебу почему не видит из папки image, надо переделать путь по-другому-->
+        <img src="{{ url_for('static', filename='Image/logo.png') }}"> <!--не ебу почему не видит из папки image, надо переделать путь по-другому-->
         <div class="logo">BETTER PACKAGE</div>
       </div>
       <nav class="navigation">
@@ -62,7 +61,7 @@
         <div id="greyBG">
           <div id="blueBar"></div>
         </div>
-        <input type="submit" onclick="move()">
+        <input type="submit" id="submit" onclick="move()">
       </div>
 
       <div class="list_container">
@@ -77,9 +76,9 @@
   </div>
 </div>
 <div class="cube">
-  <img src="../static/Image/qube.png" width="80%">
+  <img src="{{ url_for('static', filename='image/qube.png') }}" width="80%">
 </div>
-<script  src="../static/script.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 

@@ -5,7 +5,6 @@ from Parser.Companies.ParserCDEK import ParserCDEK
 from Parser.Companies.ParserDHL import ParserDHL
 from Parser.Companies.ParserDEL import ParserDEL
 from Parser.Companies.ParserDPD import ParserDPD
-from app import send_data
 
 
 def parse(send_data):
@@ -44,13 +43,12 @@ def parse(send_data):
     x = {
         "a": a.returned_data, "b": b.returned_data, "c": c.returned_data, "d": d.returned_data
     }
-    with open("data.json", "w") as write_file:
+    with open("static/data.json", "w") as write_file:
         json.dump(x, write_file)
-
     j = {
         "a": 1
     }
-    with open("flag.json", "w") as write_file:
-        json.dump(j, write_file)
+    #with open("flag.json", "w") as write_file:
+    #    json.dump(j, write_file)
     # data = json.dumps(x)
     return post_data

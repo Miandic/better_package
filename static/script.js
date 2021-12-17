@@ -38,6 +38,7 @@ function move() {
     function frame() {
         if (width >= 100) {
             clearInterval(id);
+            elem.style.width = 0;
         }
         else {
             width++;

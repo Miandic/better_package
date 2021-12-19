@@ -6,3 +6,6 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+__pycache__/
+Parser/__pycache__/
+Parser/Companies/__pycache__/

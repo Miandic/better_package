@@ -1,1 +1,5 @@
-{"a": ["DelLine", "648", 4], "b": ["DHL", "9727", "1"], "c": ["CDEK", "920", "2-3"], "d": []}
+data = '[
+{"Name":"DeLine", "Cost":1000, "Date":1},
+{"Name":"Cdek", "Cost":500, "Date":2},
+{"Name":"PonyExpress", "Cost":1500, "Date":1}
+]'

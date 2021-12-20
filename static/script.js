@@ -1,8 +1,4 @@
-let requestURL = '../static/data.json';
-let request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
+import data from "../data.json"
 
 function createData(jsonObj){
 
@@ -11,56 +7,35 @@ function createData(jsonObj){
         let inlist = document.createElement('div');
         inlist.classList = "inlist";
 
-        let logo = document.createElement('div');
-        let img = document.createElement('img');
-        img.src = item[0];
-        logo.append(img);
-        inlist.append(logo);
+        let name = document.createElement('div');
+        name.classList = "line";
+        name.textContent = item.Name;
+        inlist.append(name);
 
         let cost = document.createElement('div');
         cost.classList = "line";
-        cost.textContent = item[1];
+        cost.textContent = item.Cost;
         inlist.append(cost);
 
         let date = document.createElement('div');
         date.classList = "line";
-        date.textContent = item[2];
+        date.textContent = item.Date;
         inlist.append(date);
 
         list.append(inlist);
     });
 }
 
-function move() {
-    var elem = document.getElementById("blueBar");
-    var width = 0;
-    var id = setInterval(frame, 10);
-    function frame() {
-        if (width >= 100) {
-            clearInterval(id);
-            elem.style.width = 0;
-        }
-        else {
-            width++;
-            elem.style.width = width + '%';
-        }
-    }
-}
-
 let butSearch = document.getElementById("submit");
 
 function ButClick() {
-    request.onload = function() {
-        let arr = request.response;
+    data.onload = function() {
+        let arr = JSON.parse(data)
         createData(arr);
     }
 }
 
-butSearch.onclick = ButClick();
-
-function changeData(arr){
-
-}
+butSearch.onclick = ButClick;
 
 let butSortDate = document.getElementById("sortDate")
 
@@ -70,9 +45,11 @@ function SortData() {
         if (a.Data < b.Data) return -1;
         return 0;
     }
-    let arr = request.response;
+    let arr = JSON.parse(data)
     arr.sort(compare);
-    changeData(arr)
+    let list = document.querySelector('.list');
+    list.innerHTML = '';
+    createData(arr)
 }
 
 butSortDate.onclick = SortData;
@@ -86,9 +63,11 @@ function SortCost() {
         if (a.Cost < b.Cost) return -1;
         return 0;
     }
-    let arr = request.response;
+    let arr = JSON.parse(data)
     arr.sort(compare);
-    changeData(arr)
+    let list = document.querySelector('.list');
+    list.innerHTML = '';
+    createData(arr)
 }
 
 butSortCost.onclick = SortCost;
@@ -97,9 +76,11 @@ butSortCost.onclick = SortCost;
 let butSortName = document.getElementById("sortName")
 
 function SortName() {
-    let arr = request.response;
+    let arr = JSON.parse(data)
     arr.sort();
-    changeData(arr)
+    let list = document.querySelector('.list');
+    list.innerHTML = '';
+    createData(arr)
 }
 
 butSortName.onclick = SortName;

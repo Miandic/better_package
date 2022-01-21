@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup
+﻿from bs4 import BeautifulSoup
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from Parser.Companies.Company import Company
 from Parser.Functions import xpath_soup, cnt_time
 
-
+#xui
 class ParserDPD(Company):
     def __init__(self, start_point, end_point, currency, length, weight, height, width, money):
         Company.__init__(self, start_point, end_point, currency, length, weight, height, width, money)

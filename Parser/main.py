@@ -19,10 +19,10 @@ def parse(send_data):
     warnings.filterwarnings("ignore", category=UserWarning, module='bs4')
 
     # self, start_point, end_point, currency, length , weight, height, width ,  money
-    a = ParserDEL(city_from, city_to, "rub", length, weight, high, width, cost)
-    b = ParserDHL(city_from, city_to, "rub", length, weight, high, width, cost)
-    c = ParserCDEK(city_from, city_to, "rub", length, weight, high, width, cost)
-    d = ParserDPD(city_from, city_to, "rub", length, weight, high, width, cost)
+    a = ParserDEL(city_from, city_to,  length, weight, high, width, cost)
+    b = ParserDHL(city_from, city_to, length, weight, high, width, cost)
+    c = ParserCDEK(city_from, city_to, length, weight, high, width, cost)
+    d = ParserDPD(city_from, city_to,  length, weight, high, width, cost)
 
     write_CDEK = threading.Thread(target=a.write_data)
     write_DHL = threading.Thread(target=b.write_data)

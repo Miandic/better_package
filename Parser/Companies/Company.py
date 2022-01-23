@@ -4,10 +4,9 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 class Company:
-    def __init__(self, start_point, end_point, currency, length, weight, height, width, money):
+    def __init__(self, start_point, end_point, length, weight, height, width, money):
         self.start_point = start_point
         self.end_point = end_point
-        self.currency = currency
         self.weight = weight
         self.height = height
         self.width = width

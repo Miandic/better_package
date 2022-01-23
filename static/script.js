@@ -107,4 +107,9 @@ function SortName() {
     arr.sort();
     updateData(arr)
 }
+<<<<<<< HEAD
 butSortName.onclick = SortName;
+=======
+butSortName.onclick = SortName;
+
+>>>>>>> a5b2b155ce545a0a274259c31821650537f9c705

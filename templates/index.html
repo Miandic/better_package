@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>Better Package</title>
-  <link href="../static/css/style.css" rel="stylesheet"> <!--подключение шрифта-->
-  <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@700&display=swap" rel="stylesheet"> <!--подключение шрифта-->
 </head>
 
 <body>
@@ -13,37 +13,36 @@
   <div class="container">
     <div class="inner">
       <div class="logotype">
-        <img src="../static/Image/logo.png" alt="logo">
+        <img src="logo.png" alt="logo" height="85%">
         <div class="logo">BETTER PACKAGE</div>
       </div>
       <nav class="navigation">
-        <a class="links" href="#">About us</a>
+        <a class="links" href="https://static.wikia.nocookie.net/the-streets-roblox/images/9/9e/Amogus.jpg/revision/latest?cb=20210409100921">About us</a>
         <a class="links" href="#">Contacts</a>
       </nav>
     </div>
   </div>
 </header>
-<form method="post">
-<div class="work_field">
-    <div class="work_container">
 
-        <div class="place">
-        <input type="text" name="city1" id="city1" placeholder="Точка отправки">
-        <span class="dash"></span>
-        <input type="text" name="city2" id="city2" placeholder="Точка назначения">
-      </div>
-        <div class="size">
-        <input type="number" name="length" id="length" placeholder="X">
-        <input type="number" name="width" id="width" placeholder="Y">
-        <input type="number" name="high" id="high" placeholder="Z">
-      </div>
-        <div class="date">
-        <input type="date" name="cost" id="date">
-      </div>
-        <div class="cost">
-        <input type="number" name="weight" id="cost" placeholder="вес, кг">
-      </div>
-        <div class="button">
+<form method="post">
+  <div class="work_field">
+    <div class="user_interface">
+      <div class="forms">
+        <div class="triple">
+          <input type="number" name="length" id="length" placeholder="Ширина (X)">
+          <input type="number" name="width" id="width" placeholder="Высота (Y)">
+          <input type="number" name="high" id="high" placeholder="Глубина (Z)">
+        </div>
+        <div class="double">
+          <input type="text" name="city1" id="city1" placeholder="Точка отправки">
+          <input type="text" name="city2" id="city2" placeholder="Точка назначения">
+        </div>
+        <div class="single">
+          <input type="date" name="cost" id="date">
+        </div>
+        <div class="single">
+          <input type="number" name="weight" id="cost" placeholder="вес, кг">
+        </div>
         <div class="menu">
           <nav class="d_content" value = "Оссобенности груза">
             <ul>
@@ -56,31 +55,37 @@
             </ul>
           </nav>
         </div>
-      </div>
 
-      <div class="bar_container">
-        <div id="greyBG">
-          <div id="blueBar"></div>
-        </div>
-        <input type="submit" id="submit" onclick="move()">
       </div>
-
-      <div class="list_container">
-        <div class="sort">
-          <button type="button" id="sortBy_speed">По скорости доставки</button>
-          <button type="button" id="sortBy_cost">По стоимости</button>
-          <button type="button" id="sortBy_name">По названию</button>
+      <div class="qube">
+        <img src="qube.png" width="100%">
+      </div>
+    </div>
+    <div class="send_n_check">
+      <div class="commit_button">
+        <button type="button" id="submit" onclick="move()">НАЙТИ</button>
+      </div>
+      <div class="progress_bar">
+        <div class="grey_bg">
+          <div class="bar"></div>
         </div>
-        <div class="list"></div>
+      </div>
+    </div>
+    <div class="buttons_n_list">
+      <div class="buttons">
+        <input type="image" src="train_button.png" alt="auto" id="auto_transport">
+        <input type="image" src="auto_button.png" alt="train" id="train">
+      </div>
+      <div class="list">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
       </div>
     </div>
   </div>
 </form>
-</div>
-<div class="cube">
-  <img src="../static/Image/qube.png" width="80%">
-</div>
-<script src="../static/script.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
-
 </html>

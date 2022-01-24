@@ -1,5 +1,5 @@
 body{
-  height: 200vh; width: 100%;
+   width: 100%;
   align-items: center;
 }
 h1, h2, h3, h4, h5, h6, p{margin: 0;}
@@ -138,22 +138,7 @@ h1, h2, h3, h4, h5, h6, p{margin: 0;}
   height: 100%;
 }
 
-input{
-  max-height: 49px; height: 100%;
-}
-input[type=number]{
-  min-width: 208px;
-  width: 30%;
-  height: 90%;
-}
-input[type=text]{
-  width: 45.8%;
-  height: 90%
-}
-input[type=date]{
-  height: 90%;
-  width: 100%;
-}
+
 button[type=button]{
   width: 100%;
   height: 100%;
@@ -164,6 +149,35 @@ button[type=button]{
   background-color: #fff;
   border-radius: 5px;
   border: 1px solid #00B2CA;
+
+  transition: color, background-color 0.15s linear;
+}
+button[type=button]:active{
+  background-color: #00B2CA;
+  color: white;
+}
+
+
+input{
+  max-height: 49px; height: 100%;
+  border: 1px solid #00B2CA;
+  border-radius: 5px;
+}
+input:focus{
+  border: 1px solid #6667ab;
+}
+input[type=number]{
+  min-width: 208px;
+  width: 30%;
+  height: 90%;
+}
+input[type=text]{
+  width: 45.8%;
+  height: 90%;
+}
+input[type=date]{
+  height: 90%;
+  width: 100%;
 }
 input[type=image]{
   max-width: 49px; width: 100%;
@@ -174,7 +188,7 @@ input[type=checkbox]{
 }
 .menu{
   border-radius: 5px;
-  border: 2px solid #00B2CA;
+  border: 1px solid #00B2CA;
 
   width: 40%;
 }
@@ -198,7 +212,7 @@ input[type=checkbox]{
 }
 .progress_bar{
   height: 20%;
-  border: 1px solid #333;
+  border: 1px solid #00B2CA;
   border-radius: 6px;
   white-space: nowrap;
 }
